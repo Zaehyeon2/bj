@@ -39,7 +39,7 @@ void bfs(int s){
 	}
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
 	cin >> N >> M >> V;
 	while (M--){
@@ -47,7 +47,6 @@ int main(int argc, char const *argv[])
 		cin >> A >> B;
 		arr[A][B] = 1;
 		arr[B][A] = 1;
-
 	}
 	dfs(V);
 	printf("\n");

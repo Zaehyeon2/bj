@@ -2,9 +2,7 @@
 #include <cstdio>
 #include <vector>
 
-
 using namespace std;
-
 
 vector < vector < int > > nod(1001);
 bool chknod[1001];
@@ -22,7 +20,7 @@ void dfs(int s){
 	}
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
 	cin >> N >> M;
 	while (M--){
@@ -31,6 +29,7 @@ int main(int argc, char const *argv[])
 		nod[u].push_back(v);
 		nod[v].push_back(u);
 	}
+	
 	for( int i = 1; i <= N; i++){
 		if (chknod[i] == false){
 			dfs(i);

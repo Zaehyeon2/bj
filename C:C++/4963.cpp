@@ -33,7 +33,7 @@ int bfs(int sy, int sx){
 
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
 	while(1){
 		cin >> N >> M;
