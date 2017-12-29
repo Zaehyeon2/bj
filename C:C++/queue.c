@@ -21,7 +21,7 @@ void InitQueue(Queue *queue); //큐 초기화
 int IsEmpty(Queue *queue); //큐가 비었는지 확인
 int FrontQueue(Queue *queue); //큐의 제일 앞 데이터 반환
 int SizeQueue(Queue *queue); //큐의 사이즈 반환
-void PushQueue(Queue *queue, int data); //큐에 보관
+void EnQueue(Queue *queue, int data); //큐에 보관
 void Dequeue(Queue *queue); //큐에서 꺼냄
 
 

@@ -1,9 +1,10 @@
-#include <cstdio>
-#include <Arraylist>
+#include <stdio.h>
+#include <string.h>
 
-int main(){
-    int a[5] = {1, 2, 3, 4, 5};
-    for (int k : a) {
-        printf("%d\n", k);
-    }
+int main(void)
+{
+  int a = 1 << 30;
+  printf("%d\n", a);
+  printf("%d\n", a >> 3);
+return 0;
 }

@@ -1,37 +1,30 @@
 #include <cstdio>
 #include <stack>
-#include <iostream>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
-stack <char> s;
-
-int main(int argc, char const *argv[]) {
-    int T;
-    int ans = 0;
-    cin >> T;
-    while (T--){
-        string inp;
-        cin >> inp;
-        for (int i = 0; i < inp.size(); i++) {
-            if (s.empty()){
-                s.push(inp[i]);
-            }
-            else{
-                if ( s.top() == inp[i]){
-                    s.pop();
-                }
-                else{
-                    s.push(inp[i]);
-                }
-            }
+int main(){
+  int T; scanf("%d", &T);
+  int cnt = 0;
+  while ( T-- ){
+    stack <char> s;
+    string inp; cin >> inp;
+    for (int i = 0; i < inp.size(); i++) {
+      if ( s.size() == 0){
+        s.push(inp[i]);
+      }
+      else {
+        if (s.top() == inp[i]){
+          s.pop();
         }
-        if (s.empty()) {
-            ans++;
+        else {
+          s.push(inp[i]);
         }
-        stack <char> s;
+      }
     }
-    printf("%d\n", ans);
-    return 0;
+    if (s.size() == 0) cnt++;
+  }
+  printf("%d\n", cnt);
 }
