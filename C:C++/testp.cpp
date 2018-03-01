@@ -1,6 +1,7 @@
 #include <cstdio>
+#include <algorithm>
 
-int main() {
-  int T; scanf("%d", &T--);
-  printf("%d\n",T);
+int main(){
+  printf("졸업을\
+              축하드립니다!");
 }
