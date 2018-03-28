@@ -1,7 +1,9 @@
-#include <cstdio>
-#include <algorithm>
-
+#include <stdio.h>
 int main(){
-  printf("졸업을\
-              축하드립니다!");
+  int cnt = 0;
+  while (cnt < 5) {
+	   printf("123 ");
+	    cnt++;
+    }
+  return 0;
 }

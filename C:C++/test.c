@@ -1,8 +1,18 @@
 #include <stdio.h>
-#include <string.h>
+
 int main() {
-	char c[6];
-	scanf("%s", c);
-	if (strcmp(c,"str") == 0) printf("1\n");
-	else printf("0\n");
+
+	int A, B;
+
+	printf("A를 입력해주세요\n");
+
+	scanf("%d", &A);
+
+	printf("B를 입력해주세요\n");
+
+	scanf("%d", &B);
+
+	printf("A+B의 값은 %d\n", A+B);
+
+	return 0;
 }
