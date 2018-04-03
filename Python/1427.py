@@ -1,5 +1,5 @@
 N = input()
-S= []
+S = []
 ans = ''
 for i in range(len(N)):
     S += N[i]
