@@ -1,9 +1,11 @@
 #include <stdio.h>
-int main(){
-  int cnt = 0;
-  while (cnt < 5) {
-	   printf("123 ");
-	    cnt++;
-    }
-  return 0;
-}
+
+ int main(){
+   int tmp = 123456789;
+   c = 9;
+
+   while (tmp > 0) {
+     printf("%d\n", tmp % 10);
+     tmp /= 10;
+   }
+ }

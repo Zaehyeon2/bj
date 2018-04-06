@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <iostream>
 #include <cstdio>
-#include <string>
+#include <cstring>
 #include <queue>
 
 using namespace std;
@@ -30,7 +30,7 @@ int bfs(int sy, int sx){
 	return arr[N-1][M-1] - 1 ;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
 	cin >> N >> M;
 	for (int i = 0; i < N ; i ++){
