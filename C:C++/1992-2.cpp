@@ -33,6 +33,6 @@ int main(){
       scanf("%1d", &arr[i][j]);
     }
   }
-  quad(0, 0, N * N);
+  quad(0, 0, N);
   printf("\n");
 }
