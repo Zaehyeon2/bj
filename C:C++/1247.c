@@ -1,14 +1,16 @@
 #include <stdio.h>
 
+int T;
+long double sum, N;
 int main(int argc, char const *argv[]) {
+
   for (size_t i = 0; i < 3; i++) {
-    int T;
     scanf("%d", &T);
-    long long sum = 0, N;
+    sum = 0;
     for (size_t j = 0; j < T; j++) {
-      scanf("%lld", &N);
+      scanf("%Lf", &N);
       sum += N;
-      printf("%lld\n", sum);
+      // printf("%Lf\n", sum);
     }
     if (sum == 0){
       printf("0\n");

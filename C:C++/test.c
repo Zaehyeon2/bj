@@ -1,5 +1,11 @@
 #include <stdio.h>
 
-int main() {
-	Printf("%s\n", "123");
+int sum(int a, int b) {
+  int ret = a + b;
+  return ret;
+}
+
+int main(){
+  sum(3, 4);
+  printf("%d\n", sum(3, 4));
 }
