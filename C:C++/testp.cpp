@@ -1,11 +1,22 @@
-#include <stdio.h>
+#include <cstdio>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <iostream>
 
- int main(){
-   int tmp = 123456789;
-   c = 9;
+using namespace std;
 
-   while (tmp > 0) {
-     printf("%d\n", tmp % 10);
-     tmp /= 10;
-   }
- }
+vector <string> v;
+
+int main() {
+  while(1) {
+    string tmp; cin >> tmp;
+    if(tmp == "0") break;
+    v.push_back(tmp);
+  }
+  sort(v.begin(), v.end());
+  for(int i = 0; i < v.size(); i++){
+    printf("%s\n", v[i].c_str());
+  }
+  cout << v.size();
+}
