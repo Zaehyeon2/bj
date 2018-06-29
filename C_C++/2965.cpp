@@ -1,21 +1,10 @@
 #include <cstdio>
+#include <cstdlib>
+#include <algorithm>
+
+using namespace std;
 
 int main(){
-  int A, B, C; scanf("%d %d %d", &A, &B, &C);
-  int cnt = 0;
-  while(1) {
-    if ( A + 1 == B && B + 1 == C) {
-      break;
-    }
-    if ( C - B > B - A) {
-      A = B;
-      B = C - 1;
-    }
-    else {
-      C = B;
-      B = C - 1;
-    }
-    cnt++;
-  }
-  printf("%d\n", cnt);
+	int a, b, c; scanf("%d%d%d", &a, &b, &c);
+	printf("%d\n", max(abs(a - b), abs(b - c))-1);
 }

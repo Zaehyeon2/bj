@@ -1,40 +1,43 @@
-#include <queue>
 #include <cstdio>
-#include <iostream>
+#include <queue>
+#include <vector>
 #include <algorithm>
 
 using namespace std;
 
-int imp[101] = {};
+typedef pair<int, int> ii;
 
-int main() {
-    int T; cin >> T;
-    while (T--) {
-        queue <pair <int, int> > q;
-        int N, M, cnt = 1;
-        cin >> N >> M;
-        for (int i = 0; i < N; i ++) {
-            int inp; cin >> inp;
-            imp[i] = inp;
-            q.push(make_pair(i, inp));
-        }
-        sort(imp, imp+N);
-        while(1) {
-            if (imp[N - cnt] == q.front().second){
-                if (M != q.front().first) {
-                    q.pop();
-                    cnt++;
-                }
-                else {
-                    printf("%d\n",cnt);
-                    break;
-                }
-            }
-            else {
-                q.push(q.front());
-                q.pop();
-            }
-        }
-    }
-    return 0;
+int main(){
+	int T; scanf("%d", &T);
+	while(T--){
+		int N, M; scanf("%d%d", &N, &M);
+		vector <int> import;
+		queue <pair<int, int> > inp;
+		int ans = 0;
+		for (int i = 0; i < N; ++i)
+		{
+			int tmp; scanf("%d", &tmp);
+			import.push_back(-tmp);
+			inp.push(ii(tmp, i));
+		}
+		sort(import.begin(), import.end());
+		while(1){
+			if(-import[ans] == inp.front().first){
+				if(inp.front().second == M){
+					break;
+				}
+				inp.pop();
+				ans++;
+			}
+			else{
+				// printf("%d %d\n", inp.front().first, inp.front().second);
+				inp.push(inp.front());
+				inp.pop();
+			}
+		}
+		printf("%d\n", ans+1);
+		import.clear();
+		while(!inp.empty()) inp.pop();
+		ans = 0;
+		}
 }

@@ -1,40 +1,83 @@
 #include <cstdio>
-#include <iostream>
 #include <queue>
-#include <cmath>
+#include <string>
 #include <cstring>
 
 using namespace std;
 
-int prime[10001];
-int chk[10001];
+bool chk[10001];
+int ans[10001];
+bool isprime[10001];
 
-void primeseting() {
-	for(int i = 2; i < 100; i++){
-		if (prime[i] == 0){
-			for (int j = i * i; j < 10000; j += i) {
-				prime[j] = 1;
+void primeset() {
+	for(int i = 2; i < 10000; i++){
+		for(int j = i; j < 10000; j *= j){
+			if(!(j % i)) isprime[j] = 1;
+		}
+	}
+}
+
+
+void bfs(int s){
+	chk[s] = true;
+	queue <int> q;
+	q.push(s);
+	ans[s] = 0;
+	while(!q.empty()){
+		int a = q.front();
+		q.pop();
+		for(char i = '0'; i <= '9'; i++){
+			string tmp = to_string(a);
+			tmp[3] = i;
+			int tmpi = stoi(tmp);
+			if(chk[tmpi] == 0 && isprime[tmpi] == 0){
+				q.push(tmpi);
+				ans[tmpi] = ans[a]+1;
+				chk[tmpi] = 1;
+			}
+		}
+		for(char i = '0'; i <= '9'; i++){
+			string tmp = to_string(a);
+			tmp[2] = i;
+			int tmpi = stoi(tmp);
+			if(chk[tmpi] == 0 && isprime[tmpi] == 0){
+				q.push(tmpi);
+				ans[tmpi] = ans[a]+1;
+				chk[tmpi] = 1;
+			}
+		}
+		for(char i = '0'; i <= '9'; i++){
+			string tmp = to_string(a);
+			tmp[1] = i;
+			int tmpi = stoi(tmp);
+			if(chk[tmpi] == 0 && isprime[tmpi] == 0){
+				q.push(tmpi);
+				ans[tmpi] = ans[a]+1;
+				chk[tmpi] = 1;
+			}
+		}
+		for(char i = '1'; i <= '9'; i++){
+			string tmp = to_string(a);
+			tmp[0] = i;
+			int tmpi = stoi(tmp);
+			if(chk[tmpi] == 0 && isprime[tmpi] == 0){
+				q.push(tmpi);
+				ans[tmpi] = ans[a]+1;
+				chk[tmpi] = 1;
 			}
 		}
 	}
 }
 
-int solve(int s, int e){
-	memset(chk, -1, sizeof(chk));
-	queue <int> q;
-	chk[s] = 0;
-	q.push(s);
-	while(!q.empty()){
-
-	}
-
-}
 
 int main() {
-	int N; scanf("%d", &N);
-	while(N--){
-		int S, E;
-		scanf("%d %d", &S, &E);
+	primeset();
+	int T; scanf("%d", &T);
+	while(T--){
+		int A, B; scanf("%d%d", &A, &B);
+		bfs(A);
+		printf("%d\n", ans[B]);
+		memset(ans, 0, sizeof(ans));
+		memset(chk, 0, sizeof(chk));
 	}
-	return 0;
 }
